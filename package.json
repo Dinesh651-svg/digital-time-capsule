@@ -1,0 +1,21 @@
+{
+  "name": "digital-time-capsule-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd frontend && npm run dev\"",
+    "start": "concurrently \"cd server && npm start\" \"cd frontend && npm start\"",
+    "seed": "cd server && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "workspaces": [
+    "server",
+    "frontend"
+  ],
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}
